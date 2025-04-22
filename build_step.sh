@@ -4,7 +4,7 @@ set -e # Stops script if failure
 
 echo "build"
 npm install
-npm run eslint
+npm run lint
 npm run test
 npm run build
 npm run start-prod &
