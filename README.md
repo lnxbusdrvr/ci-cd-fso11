@@ -7,4 +7,3 @@ Repo for fullStackOpen exercises 11.20 - 11.21
 1. [my fsO-repo](https://github.com/lnxbusdrvr/fullStackOpen)
 1. [fullstackopen.com part 11 E](https://fullstackopen.com/en/part11/expanding_further)
 
-
