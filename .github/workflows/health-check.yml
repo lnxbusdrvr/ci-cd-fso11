@@ -20,7 +20,7 @@ jobs:
         if: success()
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        uses: Ilshidur/discord-webhook-action@0.3.2
+        uses: Ilshidur/discord-webhook-action@v1.0.0
         with:
           message: |
             ✅ Health check ok
@@ -31,7 +31,7 @@ jobs:
         if: failure()
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        uses: Ilshidur/discord-webhook-action@0.3.2
+        uses: Ilshidur/discord-webhook-action@v1.0.0
         with:
           message: |
             ❌ Health check failed!
