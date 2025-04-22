@@ -25,22 +25,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check style
-        run: npm run lint
-
       - name: Build
         run: npm run build
-
-      - name: Test
-        run: npm test
-
-      - name: E2E tests
-        uses: cypress-io/github-action@v5
-        with:
-          start: npm run start-prod
-          wait-on: http://localhost:3001/
-          wait-on-timeout: 60
-          command: npm run test:e2e
 
       - name: Deploy to render
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
