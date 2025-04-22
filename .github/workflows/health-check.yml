@@ -22,7 +22,7 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/discord-webhook-action@v1.0.0
         with:
-          message: |
+          args: |
             ✅ Health check ok
             URL: https://lnxbusdrvr-full-stack-open-pokedex.onrender.com/
             Time: ${{ github.event.schedule }}
@@ -33,7 +33,7 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/discord-webhook-action@v1.0.0
         with:
-          message: |
+          args: |
             ❌ Health check failed!
             URL: https://lnxbusdrvr-full-stack-open-pokedex.onrender.com/
             Time: ${{ github.event.schedule }}
