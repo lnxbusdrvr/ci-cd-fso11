@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const app = express();
 require('dotenv').config();
+const { version } = require('./package.json');
 const Person = require('./models/person');
 
 app.use(express.json());
@@ -52,6 +53,14 @@ app.get('/info', (request, response, next) => {
         </div>`);
     })
     .catch(error => next(error));
+});
+
+app.get('/version', (request, response) => {
+  response.send(`v${version} - build at ${new Date().toISOString()}`);
+});
+
+app.get('/health', (request, response) => {
+  response.send('ok')
 });
 
 app.get('/api/persons', (request, response) => {
@@ -119,13 +128,4 @@ app.listen(PORT, () => {
 });
 
 
-app.get('/version', (req, res) => {
-  res.send(`v${version} - build at ${new Date().toISOString()}`)
-});
 
-app.get('/health', (req, res) => {
-  // eslint-disable-next-line no-constant-condition
-  // broke health:
-  // if (true) throw('error...  '
-  res.send('ok')
-});
