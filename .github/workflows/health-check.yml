@@ -15,25 +15,5 @@ jobs:
           max-attempts: 3
           retry-delay: 10s
       
-
-      - name: Inform success to Discord
-        if: success()
-        uses: johnnyhuy/actions-discord-git-webhook@v1.0.0
-        with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
-          args: |
-            ✅ Health check ok
-            URL: https://lnxbusdrvr-full-stack-open-pokedex.onrender.com/
-            Time: ${{ github.event.schedule }}
-
-      - name: Inform to Discord
-        if: failure()
-        uses: johnnyhuy/actions-discord-git-webhook@v1.0.0
-        with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
-          args: |
-            ❌ Health check failed!
-            URL: https://lnxbusdrvr-full-stack-open-pokedex.onrender.com/
-            Time: ${{ github.event.schedule }}
         
           
